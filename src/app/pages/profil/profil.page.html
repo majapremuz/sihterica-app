@@ -1,0 +1,77 @@
+<ion-content [fullscreen]="true" (ionViewWillEnter)="fetchUserData()">
+  <form [formGroup]="applyForm" (ngSubmit)="unosProfila()">
+    <img src="assets/title image.png" alt="title image" class="title-img">
+
+    <h1>Moji podaci</h1>
+
+    <label for="ime">Ime:</label>
+    <input type="text" id="ime" formControlName="ime">
+
+    <label for="prezime">Prezime:</label>
+    <input type="text" id="prezime" formControlName="prezime">
+
+    <label for="Mobitel">Mobitel:</label>
+    <input type="text" id="mobitel" formControlName="mobitel">
+
+    <label for="E-mail">E-mail:</label>
+    <input type="text" id="email" formControlName="email">
+
+    <label for="adresa">Adresa:</label>
+    <input type="text" id="adresa" formControlName="adresa">
+
+    <label for="odjeća">Veličina odjeće:</label>
+    <input type="text" id="odjeća" formControlName="odjeća">
+
+    <label for="obuća">Veličina obuće:</label>
+    <input type="text" id="obuća" formControlName="obuća">
+
+    <ion-item>
+      <ion-label position="stacked">
+        <p>Datum rođenja: </p>
+
+        <br>
+      </ion-label>
+      
+      <ion-input id="datum_rodenja" [value]="formattedDate2" readonly required (click)="openPopover($event, 'popover2')" formControlName="datum_rodenja"></ion-input>
+      <ion-popover trigger="datum_rodenja">
+        <ng-template>
+          <ion-datetime 
+            presentation="date" 
+            locale="hr-HR" 
+            [firstDayOfWeek]="1" 
+            [highlightedDates]="highlightedDates"
+            (ionChange)="onDateChange($event, 'datum_rodenja')">
+          </ion-datetime>
+        </ng-template>
+      </ion-popover>
+    </ion-item>
+
+    <br>
+    
+    <button type="submit">Potvrda podataka</button>
+
+  </form>
+
+  <div *ngIf="formSubmitted && !errorMessage" class="formSend sucess">Podaci su uspješno poslani!</div>
+
+  <div *ngIf="errorMessage" class="formSend error">{{ errorMessage }}</div>
+
+  <div class="space"></div>
+
+  
+  <nav>
+    <a (click)="navHours()" [ngClass]="{'active-nav': currentPage === 'hours'}">
+      <img src="assets/hours_icon.png" alt="hours icon">
+    </a>
+    <a (click)="navLokacija()" [ngClass]="{'active-nav': currentPage === 'locations'}">
+      <img src="assets/location.png" alt="location icon">
+    </a>
+    <a (click)="navProfil()" [ngClass]="{'active-nav': currentPage === 'profil'}">
+      <img src="assets/profil_icon.png" alt="profil icon">
+    </a>
+    <a (click)="navOdjava()" [ngClass]="{'active-nav': currentPage === 'odjava'}">
+      <img src="assets/odjava_icon.png" alt="odjava icon">
+    </a>
+    </nav>
+
+</ion-content>

@@ -1,0 +1,7 @@
+{
+  "name": "bvproduct",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
