@@ -214,7 +214,7 @@ private removeHourFromServer(hourId: string): Observable<void> {
     password: credentials.hashedPassword,
     id: hourId
   };
-
+console.log("authPayload: ", authPayload)
   const url = `https://bvproduct.app/api/hours-delete.php`;
 
   // Send a POST request with the payload in the body
@@ -230,27 +230,6 @@ private removeHourFromServer(hourId: string): Observable<void> {
     map(() => undefined) 
   );
 }
-
-    /*setCurrentWeek(weekOffset = 0) {
-      const startOfWeek = moment().startOf('isoWeek').add(weekOffset, 'weeks');
-      const endOfWeek = moment(startOfWeek).endOf('isoWeek');
-
-  
-      // Format dates for your application
-      this.currentWeekStart = startOfWeek.format('YYYY-MM-DD');
-      this.currentWeekEnd = endOfWeek.format('YYYY-MM-DD');
-      console.log("end off week: ", this.currentWeekEnd)
-
-  
-      // Update currentWeek array if needed
-      this.currentWeek = Array.from({ length: 7 }).map((_, i) =>
-        startOfWeek.clone().add(i, 'days').format('DD.MM.YYYY')
-      );
-  
-      // Load hours for the new week
-      this.loadHours();
-    }*/
-
       setCurrentWeek(weekOffset = 0) {
         const startOfWeek = moment().startOf('isoWeek').add(weekOffset, 'weeks');
         const endOfWeek = moment(startOfWeek).endOf('isoWeek');
@@ -377,6 +356,8 @@ private removeHourFromServer(hourId: string): Observable<void> {
       this.http.post<any>('https://bvproduct.app/api/hours.php', authPayload)
         .subscribe({
           next: (response) => {
+
+            console.log("loadHours response: ", response)
   
             // Process the response to update hoursByDate
             this.hoursByDate = {};

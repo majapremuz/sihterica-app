@@ -1,5 +1,5 @@
 ion-content {
-  --background: #4048c5;
+  --background: #fb7426;
 }
 
 #container {
@@ -10,7 +10,7 @@ ion-content {
   align-items: center;
   flex-direction: column;
   background-color: #ffff;
-  padding: 2rem 1.8rem;
+  padding: 1.5rem;
   border-radius: 5px;
   font-family: 'Open Sans', sans-serif;
   line-height: 1.42857143;
@@ -40,7 +40,7 @@ input[type="password"] {
 
 
 button {
-  background-color: #4048c5;
+  background-color: #fb7426;
   color: #ffff;
   width: 100%;
   padding: 1.15em 0;
@@ -48,4 +48,13 @@ button {
   margin: 1em 0;
   font-size: 0.875rem;
   font-weight: bold;
+}
+
+.login-message {
+  background-color: white;
+  width: 80%;
+  margin: 1rem auto;
+  text-align: center;
+  padding: 1rem 0;
+  border-radius: 8px;
 }

@@ -1,8 +1,8 @@
 import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'bvproduct.app',
-  appName: 'bvproduct',
+  appId: 'sihterica.app',
+  appName: 'sihterica',
   webDir: 'www'
 };
 

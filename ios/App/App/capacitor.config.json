@@ -1,6 +1,6 @@
 {
-	"appId": "com.prolink.bvproduct",
-	"appName": "bvproduct",
+	"appId": "sihterica.app",
+	"appName": "sihterica",
 	"webDir": "www",
 	"packageClassList": [
 		"AppPlugin",
