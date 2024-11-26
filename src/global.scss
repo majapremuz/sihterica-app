@@ -84,13 +84,14 @@ body.dark {
  }
 
  .alert-button {
-  background: linear-gradient(90deg, rgb(0, 107, 189) 0%, rgb(0, 0, 147) 100%);
+  background: linear-gradient(90deg, rgba(251, 116, 38, 1) 0%, rgba(255, 212, 130, 1) 100%);
   display: flex;
   justify-content: center;
   align-items: center;
  }
 
  .alert-button-group .sc-ion-alert-md {
-  color: white;
+  color: black;
+  font-weight: bold;
  }
  
